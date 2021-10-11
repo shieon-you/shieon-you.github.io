@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How can we integrate with OPENS DRM</title>
+</head>
+<body>
+    <p>
+        Integration with OPENS DRM depends on current situation of the service provider’s system.
+    </p>
+    <span>&nbsp;</span>
+    <span>&nbsp;</span>
+    <p>
+        <b><i>A.</i> We have eBook, eBook reader, and front-end service site.</b> 
+        <ul>
+            <li>First, your eBook should be encrypted by OPENS DRM packager, and locate the protected eBook at content server, which is accessible by URL.</li>
+            <li>Second, your eBook reader should be integrated with OPEND DRM client.</li>
+            <li>Third, your front-end service site should be integrated with OPENS DRM license generation service just before the delivering the purchased eBook to user. And your service just may deliver the license to the OPENS DRM client integrated eBook reader.</li>
+        </ul>
+    </p>
+    <span>&nbsp;</span>
+    <p>
+        <b><i>B.</i> We have eBooks and front-end service site. But we are not able to have DRM integrated eBook reader.</b>
+        <ul>
+            <li>First, your eBook should be encrypted by OPENS DRM packager, and locate the protected eBook at content server, which is accessible by URL.</li>
+            <li>Second, use R2 Reader provided by EDRLab as your eBook reader.</li>
+            <li>Third, your front-end service site should be integrated with OPENS DRM license generation service just before the delivering the purchased eBook to user. And your service just may deliver the license to the R2 Reader.</li>
+        </ul>
+    </p>
+    <span>&nbsp;</span>
+    <p>
+        <b><i>C.</i> We have only eBooks without eBook reader, nor front-end service site.</b>
+        <ul>
+            <li>You can request us to implement front-end service site for your own design. We have a very good template which is based on WordPress and OPENS-DRM-integrated front-end site. Please contact us for it.</li>
+            <li>Then your eBook can be uploaded your customized front-end site, it is automatically encrypted and located at content server.</li>
+            <li>And the service site delivers a license to the R2 Reader provided by EDRLab so that user can open the purchased eBook in the R2 Reader.</li>
+        </ul>
+    </p>
+    <span>&nbsp;</span>
+    <p>
+        <b><i>D.</i> We have only new eBook business model, without eBook, eBook reader, nor front-end service site.</b>
+        <ul>
+            <li>You may have problem to get the eBook from the publishers because of DRM matter. Even they don't trust you to provide plain eBook.</li>
+            <li>OPENS DRM supports the OPEN DRM packager windows application which can be run in the publisher' side. You can provide it to your publishers and they can encrypted their eBooks in their side. Then you can receive the protected eBook.</li>
+            <li>After then, remained integration work processes are same as "We have only eBooks without eBook reader, nor front-end service site" case.</li>
+        </ul>
+    </p>
+</body>
+</html>

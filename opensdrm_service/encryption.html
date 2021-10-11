@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OPENS DRM</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="indexApp" class="container-fluid content">
+        <header-tag></header-tag>
+        <!-- content area : start -->
+        <div class="container-fluid o_encryption">
+            <div class="container">
+                <div class="page_title">
+                    <p class="pg_tit_txt">Tutorials</p>
+                    <div class="pg_tit_txt_add">
+                        In the tutorial, you can experience ISO TS 23078-2(Readium LCP) and 23078-3 standards through OPENS DRM.
+                        Select the DRM type you want to experience and take the following steps:
+                        (These tutorials are provided only for the testing purpose) 
+                    </div>
+                </div>
+                <div class="page_content">
+                    <div class="subtit_line">eBook Encryption</div>
+                    <div class="pg_guide_cnt1">
+                        You can encrypt a plain eBook with OPENS DRM.
+                        First choose one of sample eBooks provided by us or add your own eBook from your local storage.
+                        Then select "Encrypt eBook" button.                       
+                    </div> 
+                    <form id="o_encryption_form_encryptEbook">
+                        <div>
+                            <div class="subtit_color">Add File *</div>
+                            <div class="pg_guide_radio_area clearfix">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="o_encryption_rd" id="o_encryption_rd_sample" value="option1" checked>
+                                    <label class="form-check-label" for="o_encryption_rd_sample">
+                                        <i class="icon-dot-circled"></i>
+                                        <i class="icon-circle-empty"></i> 
+                                        <span class="select_tit">Sample eBooks</span>
+                                        <span class="label_cnt">
+                                            <select class="form-control" id="o_encryption_sl_sample" multiple>
+                                                <option value="1">trees.epub (1MB)</option>
+                                                <option value="2">cc-shared.epub (150KB)</option>
+                                                <option value="3">comic-book.epub (2MB)</option>
+                                                <option value="4">wiki-wiki.epub (30KB)</option>
+                                            </select>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="o_encryption_rd" id="o_encryption_rd_yourOwn" value="option2">
+                                    <label class="form-check-label" for="o_encryption_rd_yourOwn">
+                                        <i class="icon-dot-circled"></i>
+                                        <i class="icon-circle-empty"></i> 
+                                        <span class="select_tit">Your own eBook</span>
+                                        <div class="label_cnt">
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="o_encryption_at_yourOwn">
+                                                    <label class="custom-file-label" for="o_encryption_at_yourOwn">Choose file</label>
+                                                </div>
+                                                <ul class="txt_noti">
+                                                    <li>* It allows only up to 10MB for testing purpose.</li>
+                                                    <li>* Only alphanumeric is allowed for the filename.</li>
+                                                    <li>* After pushing "Encrypt eBook", Your own eBook will be uploaded into the OPENS DRM cloud server for the encryption.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_area">
+                            <!-- <button type="button" class="btn_color_purple btn_cmn">Encrypt eBook</button> -->
+                            <!-- Button trigger modal --><br><br>
+                            <button type="button" class="btn_color_purple btn_cmn" id="o_encryption_btn_waiting" data-toggle="modal" data-target="#o_modal_encryption_waiting">Encrypt eBook</button>
+                            <!-- Button trigger modal -->
+                            <!-- <button type="button" class="btn_color_purple btn_cmn" id="o_encryption_btn_completed" data-toggle="modal" data-target="#o_modal_encryption_completed">Encrypt eBook</button> <br><br>-->
+                            <!-- Button trigger modal -->
+                            <!-- <button type="button" class="btn_color_purple btn_cmn" id="o_encryption_btn_er_failed" data-toggle="modal" data-target="#o_modal_encryption_er_failed">Encrypt eBook</button> <br><br>-->
+                            <!-- Button trigger modal --><br><br>
+                            <!-- <button type="button" class="btn_color_purple btn_cmn" id="o_encryption_btn_er_volume" data-toggle="modal" data-target="#o_modal_encryption_er_volume">Encrypt eBook</button> -->
+                        </div>
+                    </form>                
+                </div>
+                <!-- Modal : start -->
+                <div class="modal fade" id="o_modal_encryption_waiting" tabindex="-1" role="dialog" aria-labelledby="o_modal_encryption_waiting_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body omt_progress">
+                                <p class="mb_txt_tit">
+                                    E-book is being encrypted.
+                                </p>
+                                <div class="rolling_area">
+                                    <img src="img/rolling.gif">
+                                </div> 
+                                <div class="btn_area">
+                                    <button type="button" class="btn_color_purple btn_cmn" data-dismiss="modal" aria-label="Close">Cancel</button> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : end -->
+    
+                <!-- Modal : start -->
+                <div class="modal fade" id="o_modal_encryption_completed" class="modal_sm" tabindex="-1" role="dialog" aria-labelledby="o_modal_encryption_completed_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body omt_finished">
+                                <p class="mb_txt_tit">
+                                    eBook encryption completed.
+                                </p>
+                                <p class="mb_txt_cnt">
+                                    You can download encrypted e-book files<br>from the <a href="license.html" class="txt_purple">License Generation Page</a>. <br>You can also set up licenses for encrypted e-book files.
+                                </p> 
+                                <div class="btn_area">
+                                    <button class="btn_outline_purple btn_cmn btn_a" data-dismiss="modal" aria-label="Close">Close</a>  
+                                    <button onclick="location.href='license.html'" class="btn_color_purple btn_cmn btn_wide btn_a">Go to the License Generation</a>  
+                                </div>                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : end -->
+    
+                <!-- Modal : start -->
+                <div class="modal fade" id="o_modal_encryption_er_failed" tabindex="-1" role="dialog" aria-labelledby="o_modal_encryption_er_failed_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal_alert" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="icon_circle_wrap pp_error">
+                                    <i>!</i>
+                                </div>
+                                <p class="mb_txt_tit">
+                                    Failed to encrypt e-book. 
+                                </p>
+                                <p class="mb_txt_cnt">
+                                    Please try again.
+                                    If you continue to experience the same problem, please contact the customer center.
+                                </p> 
+                                <div class="btn_area">
+                                    <button class="btn_outline_purple btn_cmn btn_a" data-dismiss="modal" aria-label="Close">Close</a>  
+                                </div>                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : end -->
+    
+                <!-- Modal : start -->
+                <div class="modal fade" id="o_modal_encryption_er_volume" tabindex="-1" role="dialog" aria-labelledby="o_modal_encryption_er_volume_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal_alert" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="icon_circle_wrap pp_error">
+                                    <i>!</i>
+                                </div>
+                                <p class="mb_txt_cnt_2">
+                                    You can add files under 10MB.
+                                </p>
+                                <div class="btn_area">
+                                    <button class="btn_outline_purple btn_cmn btn_a" data-dismiss="modal" aria-label="Close">OK</a>  
+                                </div>                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : end -->
+            </div>
+        </div>
+        <!-- content area : end -->
+        <footer-tag></footer-tag>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="custom/js/header.js"></script>
+    <script src="custom/js/footer.js"></script>
+    <script src="custom/app/index.js"></script>
+    <script>
+    $('.custom-file-input').on('change', function() {
+        let fileName = $(this).val().split('\\').pop();
+        let label = $(this).siblings('.custom-file-label');
+        
+        if (label.data('default-title') === undefined) {
+            label.data('default-title', label.html());
+        }
+        
+        if (fileName === '') {
+            label.removeClass("selected").html(label.data('default-title'));
+        } else {
+            label.addClass("selected").html(fileName);
+        }
+    });
+    </script>
+</body>
+</html>

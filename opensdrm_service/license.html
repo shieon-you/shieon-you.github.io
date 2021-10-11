@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OPENS DRM</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="indexApp" class="container-fluid content">
+        <header-tag></header-tag>
+        <!-- content area : start -->
+        <div class="container-fluid o_license">
+            <div class="container">
+                <div class="page_title">
+                    <p class="pg_tit_txt">Tutorials</p>
+                    <div class="pg_tit_txt_add">
+                        In the tutorial, you can experience ISO TS 23078-2(Readium LCP) and 23078-3 standards through OPENS DRM.
+                        Select the DRM type you want to experience and take the following steps:
+                        (These tutorials are provided only for the testing purpose)   
+                    </div>
+                </div>
+                <div class="page_content">
+                <div class="subtit_line">License Generation</div>
+                <div class="pg_guide_cnt1">
+                    You can download encrypted eBook from the OPENS DRM cloud server.
+                    (The download will be available within 24 hours)<br>
+                    You can also download a license for any encrypted eBook after setting necessary rights information.
+                    A generated license whose type is ISO TS 23078-2(Readium LCP) can be opened in the R2 Reader from EDRLab.
+                    And a license for ISO TS 23078-3 can be accessed on the OPENS DRM integrated Reader (TDB)
+                    
+                    The protected eBook must be located at and accessible by specific URL. 
+                    The URL information should be set in the license.                
+                </div> 
+                    <div class="table-responsive-lg">
+                        <table class="table" id="o_license_table_license">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><a href="#">No.</a></th>
+                                    <th scope="col"><a href="#">Type</a></th>
+                                    <th scope="col"><a href="#">Date</a></th>
+                                    <th scope="col">File Name</th>
+                                    <th scope="col">Download Date</th>
+                                    <th scope="col">Encrypted EPUB File</th>
+                                    <th scope="col">Licensed File</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>OPENS</td>
+                                    <td>2017.01.01 15:00:00</td>
+                                    <td>adc_opens_170101.epub</td>
+                                    <td>2017.01.01~2017.01.02</td>
+                                    <td><button type="button" id="o_license_tg_download_no4">[Download]</button></td>
+                                    <!-- Button trigger modal -->
+                                    <td><button type="button" data-toggle="modal" id="o_license_tg_no4" data-target="#o_modal_license_st_no4">[Download]</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>OPENS</td>
+                                    <td>2017.01.01 15:00:00</td>
+                                    <td>adc_opens_170101.epub</td>
+                                    <td>2017.01.01~2017.01.02</td>
+                                    <td><button type="button" id="o_license_tg_download_no3">[Download]</button></td>
+                                    <td><button type="button" data-toggle="modal" id="o_license_tg_no3" data-target="#o_modal_license_st_no3">[Download]</button></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>OPENS</td>
+                                    <td>2017.01.01 15:00:00</td>
+                                    <td>adc_opens_170101.epub</td>
+                                    <td>2017.01.01~2017.01.02</td>
+                                    <td><button type="button" id="o_license_tg_download_no2">[Download]</button></td>
+                                    <td><button type="button" data-toggle="modal" id="o_license_tg_no2" data-target="#o_modal_license_st_no2">[Download]</button></td>
+                                </tr>
+                                <tr class="tr_del">
+                                    <th scope="row">1</th>
+                                    <td>OPENS</td>
+                                    <td>2017.01.01 15:00:00</td>
+                                    <td>adc_opens_170101.epub</td>
+                                    <td>2017.01.01~2017.01.02</td>
+                                    <td><button type="button" id="o_license_tg_download_no1">[Download]</button></td>
+                                    <td><button type="button" data-toggle="modal" id="o_license_tg_no1" data-target="#o_modal_license_st_no1">[Download]</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <ul class="pagination block_center">
+                            <li class="ic_fontello"><a href="#">
+                                <i class="icon-angle-double-left"></i>    
+                            </a></li>
+                            <li class="ic_fontello"><a href="#">
+                                    <i class="icon-angle-left"></i>
+                            </a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li class="ic_fontello"><a href="#">
+                                <i class="icon-angle-right"></i>
+                            </a></li>
+                            <li class="ic_fontello"><a href="#">
+                                <i class="icon-angle-double-right"></i>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <!-- Modal : start -->
+                    <div class="modal fade" id="o_modal_license_st_no4" tabindex="-1" role="dialog" aria-labelledby="o_modal_license_st_no4_label" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h6 class="modal-title" id="o_modal_license_st_label">License Setting</h6>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb_form_group">
+                                            <div class="subtit_color">Location of protected eBook *</div>
+                                            <div class="o_ls_label_cnt row">
+                                                <div>
+                                                    <label for="o_license_ip_txt_url" class="o_ls_label_txt_1">URL</label>
+                                                </div>                                                
+                                                <div>
+                                                    <input type="text" class="form-control" id="o_license_ip_txt_url" value="http://www.opensdrm.com/dr2gt1542" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb_form_group">
+                                            <div class="subtit_color">Select DRM Type *</div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="o_license_ip_chk_drm_01" checked disabled>
+                                                <label class="custom-control-label form_op_txt" for="o_license_ip_chk_drm_01">
+                                                    ISO TS 23078-2 (Readium LCP)
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="o_license_ip_chk_drm_02" disabled>
+                                                <label class="custom-control-label form_op_txt" for="o_license_ip_chk_drm_02">
+                                                    ISO TS 23078-3 (Device based protection)
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="mb_form_group">
+                                            <div class="subtit_color">Rights information</div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="o_license_ip_chk_info_01" checked>
+                                                <label class="custom-control-label form_op_txt" for="o_license_ip_chk_info_01">
+                                                    Expiration date
+                                                </label>
+                                                <input type="text" class="form-control" id="o_license_ip_txt_date" value="Sep 04 2019 23:35:33 GMT" readonly>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="o_license_ip_chk_info_02" checked>
+                                                <label class="custom-control-label form_op_txt" for="o_license_ip_chk_info_02">
+                                                    Copy & Print
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="mb_form_group">
+                                            <div class="subtit_color">Password Settings *</div>
+                                            <div class="o_ls_label_cnt row">
+                                                <div>
+                                                    <label for="o_license_ip_txt_pw" class="o_ls_label_txt_1">Password *
+                                                        <span class="o_tooltip">
+                                                            <i class="icon-info-circled"></i>
+                                                            <span class="o_tooltip_txt">
+                                                                <span>
+                                                                    Readium LCP recommends setting a password to<br>
+                                                                    <span class="color_purple">personal information (phone number or e-mail)</span><br>
+                                                                    for e-book readers.<br>
+                                                                    <span>(Minimum of 6 Characters and 50 Characters)</span>
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                </div>                                                
+                                                <div>
+                                                    <input type="text" class="form-control" id="o_license_ip_txt_pw" placeholder="Minimum 6 Characters and 50 Characters">
+                                                </div>
+                                            </div>
+                                            <div class="o_ls_label_cnt row">
+                                                <div>
+                                                    <label for="o_license_ip_txt_pw_hint" class="o_ls_label_txt_1">Password Hint</label>
+                                                </div>                                                
+                                                <div>
+                                                    <input type="text" class="form-control" id="o_license_ip_txt_pw_hint" placeholder="ex) What's your email address?">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>                                            
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn_color_purple btn_cmn" id="o_license_dg_btn_generation">License Generation</button>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal : end -->
+                </div>
+            </div>
+        </div>
+        <!-- content area : end -->
+        <footer-tag></footer-tag>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="custom/js/header.js"></script>
+    <script src="custom/js/footer.js"></script>
+    <script src="custom/app/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OPENS DRM</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="indexApp" class="container-fluid content">
+        <header-tag></header-tag>
+        <!-- content area : start -->        
+        <div class="container-fluid o_pw_page">
+            <div class="container">
+                <div class="page_nt page_nt_pw">                
+                    <p class="nt_tit">Create new password</p>                
+                    <div class="nt_cnt_wrap">
+                        <span class="nt_cnt">Please enter your new password.</span>
+                        <span class="o_tooltip">
+                            <i class="icon-info-circled"></i>
+                            <span class="o_tooltip_txt">
+                                <span>Your password must have :</span><br>
+                                <ul>
+                                    <li>Must be between 8 and 20 characters long</li>
+                                    <li>Special Characters (! @ $ % ^ & * - _ + = ?)</li>
+                                </ul>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <form id="o_pw_form_passwordCreate">
+                            <div class="form-group">
+                                <label for="o_pw_page_ip_pw_pw" class="sr-only">New Password</label>
+                                <input type="password" class="form-control is-valid" id="o_pw_page_ip_pw_pw" placeholder="New Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="o_pw_page_ip_pw_confirm" class="sr-only">Re-enter the New Password</label>
+                                <input type="password" class="form-control is-invalid" id="o_pw_page_ip_pw_confirm" placeholder="Re-enter the New Password">
+                            </div>
+                            <div class="form-group form_btn">
+                                <!-- 비활성화될 때 버튼 -->
+                                <button type="submit" class="btn_color_gray btn_cmn" id="o_pw_create_btn_save" disabled>Save Changes</button>
+                                <!-- 활성화될 때 버튼 --><br><br>
+                                <button type="submit" class="btn_color_purple btn_cmn" id="o_pw_create_btn_save">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content area : end -->
+        <footer-tag></footer-tag>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="custom/js/header.js"></script>
+    <script src="custom/js/footer.js"></script>
+    <script src="custom/app/index.js"></script>
+</body>
+</html>

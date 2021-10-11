@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OPENS DRM</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="indexApp" class="container-fluid content">
+        <header-tag></header-tag>
+        <!-- content area : start -->
+        <div class="container-fluid o_login">
+            <div class="container">
+                <div class="page_title">
+                    <p class="pg_tit_txt">Login</p>
+                </div>
+                <div class="page_content">
+                    <div class="row">
+                        <form id="o_login_form_login">
+                            <div class="form-group">
+                                <label for="o_login_ip_txt_email" class="sr-only">Email</label>
+                                <input type="text" class="form-control" id="o_login_ip_txt_email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="o_login_ip_pw_password" class="sr-only">Password</label>
+                                <input type="password" class="form-control" id="o_login_ip_pw_password" placeholder="Password">
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="o_login_ip_chk_remember">
+                                <label class="custom-control-label form_op_txt" for="o_login_ip_chk_remember">
+                                    <span>Remember ID</span> 
+                                </label>
+                            </div>
+                            <div class="form-group form_btn">
+                                <!-- <button type="button" class="btn_color_purple btn_cmn">Login</button><br><br> -->
+                                <!-- Button trigger modal -->
+                                <!-- <button type="button" class="btn_color_purple btn_cmn" id="o_login_btn_login_er_check" data-toggle="modal" data-target="#o_modal_login_er_check">Login</button><br><br> -->
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn_color_purple btn_cmn" id="o_login_btn_login_sentMail" data-toggle="modal" data-target="#o_modal_login_sentMail">Login</button>
+                            </div>
+                            <p class="form_link"><a href="pw_forgot.html">Forgot your password?</a></p>
+                        </form>
+                    </div>
+                </div>
+                <!-- Modal : start -->
+                <div class="modal fade" id="o_modal_login_er_check" tabindex="-1" role="dialog" aria-labelledby="o_modal_login_er_check_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal_alert" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="icon_circle_wrap pp_error">
+                                    <i>!</i>
+                                </div>
+                                <p class="mb_txt_cnt_2">
+                                    Please check the email addresss and password.
+                                </p>
+                                <div class="btn_area">
+                                    <button class="btn_outline_purple btn_cmn btn_a" data-dismiss="modal" aria-label="Close">OK</a>  
+                                </div>                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : end -->
+    
+                <!-- Modal : start -->
+                <div class="modal fade" id="o_modal_login_sentMail" tabindex="-1" role="dialog" aria-labelledby="o_modal_login_sentMail_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal_alert" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p class="mb_txt_tit">
+                                    We have sent a verification mail to <span class="txt_purple" id="user_mail">lorem@gmail.com</span>.
+                                    Please activate your account with the button in this mail.  
+                                </p>
+                                <p class="mb_txt_cnt">
+                                    If you have mistyped your email address, please contact us or 
+                                    If you have not received a verification email, you can resend the verification mail.  
+                                </p> 
+                                <div class="btn_area">
+                                    <button class="btn_outline_purple btn_cmn btn_a" data-dismiss="modal" aria-label="Close">Close</a>  
+                                    <button class="btn_color_purple btn_cmn btn_a" id="o_login_dg_btn_resend">Resend</a>  
+                                </div>                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : end -->
+            </div>
+        </div>
+        <!-- content area : end -->
+        <footer-tag></footer-tag>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="custom/js/header.js"></script>
+    <script src="custom/js/footer.js"></script>
+    <script src="custom/app/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OPENS DRM</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="indexApp" class="container-fluid content">
+        <header-tag></header-tag>
+        <!-- content area : start -->
+        <div class="container-fluid o_management">
+            <div class="container">
+                <div class="page_title">
+                    <p class="pg_tit_txt">Management</p>
+                    <div class="pg_tit_txt_add">
+                        You can check the history of issued license on this page.
+                    </div>
+                </div>
+                <div class="page_content">
+                    <div class="search row">
+                        <div class="col-lg-2"></div>
+                        <form class="col-lg-8 row" id="o_management_form_search">
+                            <select class="custom-select col-lg-3" id="o_management_sl_select">
+                                <option value="1" selected>Book Name</option>
+                                <option value="2">User ID</option>
+                            </select>
+                            <div class="input_wrap col-lg-7">
+                                <input class="form-control" id="o_management_ip_txt_search" type="search" placeholder="Search" aria-label="Search">
+                            </div>
+                            <button class="btn_cmn btn_outline_purple col-lg-2" id="o_management_btn_search" type="submit">Search</button>
+                        </form>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="table-responsive-md">
+                        <table class="table" id="o_management_table_mangament">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><a href="#">No.</a></th>
+                                    <th scope="col"><a href="#">Date</a></th>
+                                    <th scope="col"><a href="#">Book Name</a></th>
+                                    <th scope="col">License Period</th>
+                                    <th scope="col">User ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>2015.08.15 00:00:00</td>
+                                    <td>Lying Next to Me 5</td>
+                                    <td>2019.01.01~2019.01.31</td>
+                                    <td>test1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>2015.08.15 00:00:00</td>
+                                    <td>Lying Next to Me 5</td>
+                                    <td>2019.01.01~2019.01.31</td>
+                                    <td>test1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>2015.08.15 00:00:00</td>
+                                    <td>Lying Next to Me 5</td>
+                                    <td>2019.01.01~2019.01.31</td>
+                                    <td>test1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>2015.08.15 00:00:00</td>
+                                    <td>Lying Next to Me 5</td>
+                                    <td>2019.01.01~2019.01.31</td>
+                                    <td>test1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <ul class="pagination block_center">
+                            <li class="ic_fontello"><a href="#">
+                                <i class="icon-angle-double-left"></i>    
+                            </a></li>
+                            <li class="ic_fontello"><a href="#">
+                                    <i class="icon-angle-left"></i>
+                            </a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li class="ic_fontello"><a href="#">
+                                <i class="icon-angle-right"></i>
+                            </a></li>
+                            <li class="ic_fontello"><a href="#">
+                                <i class="icon-angle-double-right"></i>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content area : end -->
+        <footer-tag></footer-tag>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="custom/js/header.js"></script>
+    <script src="custom/js/footer.js"></script>
+    <script src="custom/app/index.js"></script>
+</body>
+</html>

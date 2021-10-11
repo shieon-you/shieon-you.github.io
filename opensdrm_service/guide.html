@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OPENS DRM</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="indexApp" class="container-fluid content">
+        <header-tag></header-tag>
+        <!-- content area : start -->
+        <div class="container-fluid o_guide">
+            <div class="container">
+                <div class="page_title">
+                        <p class="pg_tit_txt">Developer's Guide</p>
+                </div>
+                <div class="page_content">
+                    <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-readium-tab" data-toggle="pill" href="#pills-readium" role="tab" aria-controls="pills-readium" aria-selected="true">Readium LCP <span>(ISO TS 23078-2)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-opens-tab" data-toggle="pill" href="#pills-opens" role="tab" aria-controls="pills-opens">OPENS DRM <span>(ISO TS 23078-3)</span></a>
+                        </li><!-- aria-selected="false" style="pointer-events: none; cursor: default;" -->
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-readium" role="tabpanel" aria-labelledby="pills-readium-tab">
+                            <div class="subtit_line">Overview</div>
+                            <div class="pg_guide_cnt1">
+                                <span>
+                                    This page describes how to integrate ISO TS 23078-2(Readium LCP) into your existing or new eBook service system using OPENS DRM cloud service.
+                                </span>
+                                <span class="diagram_title_gray">&lt;Before Applying DRM&gt;</span>
+                                <span>
+                                    Following figure shows a work flow of a plain eBook from publisher to end user via service provider.
+                                </span>
+                                <img src="img/diagram1.png"> 
+                                <p class="txt_figure">
+                                    <b>1. Providing eBooks:</b> Publisher/writer provides plain eBooks to service provider. The channel between publisher and service provider are not secure where publishers want to protect the plain eBooks not to be leaked during delivering as well as in the service providers’ server. (DRM Requirement #1)<br><br>
+                                    <b>2. Purchasing eBook:</b> User requests eBook sales site to buy an eBook.<br><br>
+                                    <b>3. Delivering eBook:</b> eBook Sales site delivers the eBook into an eBook reader, where service providers want to protect the eBook not to be accessed to unauthorized user. (DRM Requirement #2)<br><br>
+                                    <b>4. Opening eBook:</b> eBook Reader renders the delivered eBook and shows the contents, where service providers want to protect the eBook to be accessed only within an allowed condition (limited period or not allowing transfer into other device, etc.) (DRM Requirements #3)
+                                </p>
+                                <span class="diagram_title_purple">&lt;After Applying OPENS DRM&gt;</span>
+                                <span>Following figure shows a protected work flow of an eBook from publisher to end user via service provider based on OPENS DRM.</span>
+                                <img src="img/diagram2.png">                             
+                                <p class="txt_figure">
+                                    Now you can see the DRM requirements are satisfied in the After System by:<br><br>
+                                    <b>1. Providing eBook:</b> Publisher/writer provides plain eBooks to service provider. If providers want them to be protected, the eBook can be encrypted at the provider side using a encryption tool (Windows packager application) which is provided by DRM inside.<br><br>
+                                    <b>2. Encryption eBook:</b> If delivered eBook from the publisher is plain, the eBook is encrypted by OPENS DRM cloud service. Then the protected eBook is uploaded into service provider’s content server. And catalog of the eBook is displayed in the front end of the site (eBook Sales site).<br><br>
+                                    <b>3. Purchasing eBook:</b> User requests eBook Sales site to buy an eBook.<br><br>
+                                    <b>4. Generating license:</b> A license file is generated by OPENS DRM cloud service, with which user can open the encrypted eBook later.<br><br>
+                                    <b>5. Delivering license:</b> eBook Sales site delivers the license into an eBook reader.<br><br> 
+                                    <b>6. Delivering encrypted eBook:</b> eBook reader downloads the encrypted eBook using the location information in the license.<br><br>
+                                    <b>7. Opening encrypted eBook:</b> eBook Reader decrypts the protected eBook using encryption key contained in the license and shows the contents. It also controls the validity period of eBook using the rights information in the license.
+                                </p>
+                            </div>    
+                            <div>
+                                <div class="subtit_color">1. Before your start</div>
+                                <div class="pg_guide_cnt2">
+                                    Before you start to adopt DRM functions, you should equip following systems in advance to integrate your eBook service with OPENS DRM.<br><br>
+                                    <ul>
+                                        <li>eBook content server, where protected eBooks will be stored and accessible by URL</li>
+                                        <li>eBook sales front-end, where catalogues of the eBooks are displayed and associated licenses are delivered to the eBook reader for the purchased eBook</li>
+                                        <li>eBook reader, with which end users render the protected eBook based on the policy described in the license</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="subtit_color">2. Integration with your content server (Encryption)</div>
+                                <div class="pg_guide_cnt2">
+                                    In order to deliver an eBook to the end users without any risk of indiscriminate redistribution, the eBook should be protected with secure cryptographic algorithm before the delivery. 
+                                    OPENS DRM provides 3 kinds of encryption ways to encrypt an eBook.<br><br>
+                                    <ol>
+                                        <li>
+                                            <b><i>A.</i>&nbsp;&nbsp;Windows packager application</b><br>
+                                            It is a windows application, with which service provider can encrypt an eBook, and upload the protected eBook into the content server with accessible URL. It can be used in the publisher side. 
+                                            If the eBook encrypted in the publisher side, the protected eBook is delivered to the service provider and uploaded into the service provider’s content server.
+                                        </li><br>
+                                        <li>
+                                            <b><i>B.</i>&nbsp;&nbsp;On-line packager</b><br>
+                                            It is a REST API for cloud service for eBook encryption, with which service provider can upload an plain eBook into OPENS DRM service site, and get a download URL for encrypted eBook.
+                                            It is provided as a programmable API.
+                                        </li><br>
+                                        <li>
+                                            <b><i>C.</i>&nbsp;&nbsp;Packager SDK</b><br> 
+                                            It is a JAVA library, with which service provider can integrate with DRM packager into storage system directly.
+                                        </li>
+                                    </ol><br>
+                                    <i>Usage example codes for the On-line packager REST API are following:</i> 
+                                </div>
+                                <div class="sample_code_area">
+                                    sample code<br>
+                                    sample code<br>
+                                    sample code<br>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="subtit_color">3. Integration with your front-end system (License Generation)</div>
+                                <div class="pg_guide_cnt2">
+                                    All protected eBook should be rendered only based on specified controlled policy, what we called 'License'.
+                                    If a user purchases an eBook, he/she would be get a license which contains URL of protected eBook and rights information such as validity period or usage limitation.
+                                    OPENS DRM provides a REST API to generate the DRM license.<br><br>
+                                    <i>Usage example codes for the license generation REST API are following:</i>   
+                                </div>
+                                <div class="sample_code_area">
+                                    Why do we use it?
+                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).    
+                                    Where does it come from?
+                                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                                    Where can I get some?
+                                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                </div>
+                            </div>
+                            <div>
+                                <div class="subtit_color">4. Integration with your eBook reader (DRM client)</div>
+                                <div class="pg_guide_cnt2">
+                                    License should be enforced on the secure client environment. It should be secure enough that eBook never should be extracted in the plain form and used over the allowed period. 
+                                    OPENS DRM provides a DRM client library for various OSs, with which service provider can integrated with their own eBook reader.
+                                    If you choose Readium LCP but don't have your own eBook reader or have problem to integrate with OPENS DRM client, you may use R2 Reader developed by EDRLab, which is open source and Readium LCP compliant. 
+                                </div>
+                            </div>
+                            <div>
+                                <div class="subtit_color">5. eBook Reader</div>
+                                <div class="float_area clearfix">
+                                    <div class="img_area float-lg-left">
+                                        <img src="img/screenshot_r2reader.png" alt="R2 Reader">
+                                    </div>
+                                    <div class="txt_area float-lg-left">
+                                        <p class="txt_area_tit">R2 Reader Download</p>
+                                        <p>Any eBook protected with ISO TS 23078-2(Readium LCP) can be opened on "R2 Reader" developed by EDRLab. “R2 Reader” can be downloaded from the Google Play Store or the Apple App Store.
+                                        </p>
+                                        <div class="btn_area_store">
+                                            <a href="https://play.google.com/store/apps/details?id=org.readium.r2reader&hl=en_US
+                                            " class="btn_outline_purple btn_cmn btn_a" target="_blank">
+                                                <i class="ic_store"></i>Google Play</a>
+                                            <a href="https://apps.apple.com/kr/app/r2-reader/id1363963230#?platform=iphone
+                                            " class="btn_outline_purple btn_cmn btn_a" target="_blank">
+                                                <i class="ic_store"></i>App Store</a>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-opens" role="tabpanel" aria-labelledby="pills-opens-tab">준비 중입니다.</div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <!-- content area : end -->
+        <footer-tag></footer-tag>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="custom/js/header.js"></script>
+    <script src="custom/js/footer.js"></script>
+    <script src="custom/app/index.js"></script>
+</body>
+</html>

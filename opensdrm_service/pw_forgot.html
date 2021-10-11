@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>OPENS DRM</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="indexApp" class="container-fluid content">
+        <header-tag></header-tag>
+        <!-- content area : start -->   
+        <div class="container-fluid o_pw_page">
+            <div class="container">
+                <div class="page_nt page_nt_pw">                
+                    <p class="nt_tit">Forgot your password?</p>                
+                    <p class="nt_cnt">Please enter your email address when you sign up.<br>
+                        I'll send a password reset link to your email account.
+                    </p>
+                    <div class="row">
+                        <form id="o_pw_form_passwordSend">
+                            <div class="form-group">
+                                <label class="sr-only">Email</label>
+                                <input type="text" class="form-control is-invalid" placeholder="Email(tester@opens.com)">
+                            </div>
+                            <div class="form-group form_btn">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn_color_purple btn_cmn" id="o_pw_forgot_btn_send" data-toggle="modal" data-target="#o_modal_pw_forgot_send">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Modal : start -->
+                <div class="modal fade" id="o_modal_pw_forgot_send" tabindex="-1" role="dialog" aria-labelledby="o_modal_pw_forgot_send_label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal_alert" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p class="mb_txt_cnt_2">
+                                    E-mail sent.
+                                </p>
+                                <div class="btn_area">
+                                    <button class="btn_color_purple btn_cmn btn_a" data-dismiss="modal" aria-label="Close">OK</a>  
+                                </div>                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal : end -->
+            </div>
+        </div>
+        <!-- content area : end -->
+        <footer-tag></footer-tag>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>  
+    <script src="https://unpkg.com/vue"></script>
+    <script src="custom/js/header.js"></script>
+    <script src="custom/js/footer.js"></script>
+    <script src="custom/app/index.js"></script>
+</body>
+</html>
